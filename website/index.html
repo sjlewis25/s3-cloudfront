@@ -3,24 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S3 CloudFront Portfolio Demo</title>
+    <title>Steve Lewis - Cloud Engineer Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>S3 + CloudFront Portfolio Project</h1>
-        <p>This site demonstrates S3 static hosting with CloudFront CDN distribution.</p>
-        <div class="features">
-            <h2>Features Implemented:</h2>
-            <ul>
-                <li>S3 bucket with versioning enabled</li>
-                <li>CloudFront CDN for global distribution</li>
-                <li>Automated lifecycle policies</li>
-                <li>Lambda validation on uploads</li>
-                <li>CloudWatch monitoring and alarms</li>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Steven Lewis</h1>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-    </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Cloud Engineer</h1>
+            <p class="hero-subtitle">Marine Corps Veteran | AWS Solutions Architect | Infrastructure Automation Specialist</p>
+            <div class="hero-buttons">
+                <a href="https://github.com/sjlewis25" class="btn btn-primary" target="_blank">View GitHub</a>
+                <a href="https://linkedin.com/in/steven-lewis-fl" class="btn btn-secondary" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About This Infrastructure</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="icon">‚òÅÔ∏è</div>
+                    <h3>Global CDN</h3>
+                    <p>CloudFront distribution serving content from edge locations worldwide with HTTPS encryption</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon">Ì¥í</div>
+                    <h3>Security First</h3>
+                    <p>Origin Access Identity, AES256 encryption, blocked public S3 access, IAM least-privilege</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon">‚ö°</div>
+                    <h3>Automated</h3>
+                    <p>Lambda file validation, CloudWatch alarms, SNS notifications, lifecycle policies</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon">Ì≤∞</div>
+                    <h3>Cost Optimized</h3>
+                    <p>Glacier transitions after 30 days, PriceClass_100, incomplete upload cleanup</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>S3 + CloudFront CDN</h3>
+                    <p class="tech-stack">Terraform | S3 | CloudFront | Lambda | Python</p>
+                    <p>Production-grade static website with automated file validation, monitoring, and cost optimization through lifecycle policies.</p>
+                    <a href="https://github.com/sjlewis25/s3-cloudfront" class="project-link" target="_blank">View Project ‚Üí</a>
+                </div>
+                <div class="project-card">
+                    <h3>EC2 Auto-Remediation</h3>
+                    <p class="tech-stack">Lambda | CloudWatch | EventBridge | SNS</p>
+                    <p>Automated system to detect and remediate non-compliant EC2 instances using event-driven architecture.</p>
+                    <a href="https://github.com/sjlewis25/ec2-auto-remediation" class="project-link" target="_blank">View Project ‚Üí</a>
+                </div>
+                <div class="project-card">
+                    <h3>Serverless Task API</h3>
+                    <p class="tech-stack">API Gateway | Lambda | DynamoDB | Terraform</p>
+                    <p>RESTful API with CRUD operations, built entirely serverless with infrastructure-as-code.</p>
+                    <a href="https://github.com/sjlewis25/serverless-task-api" class="project-link" target="_blank">View Project ‚Üí</a>
+                </div>
+                <div class="project-card">
+                    <h3>Container CI/CD Pipeline</h3>
+                    <p class="tech-stack">Docker | GitHub Actions | ECR | ECS</p>
+                    <p>Automated pipeline for containerized applications with testing and deployment to ECS Fargate.</p>
+                    <a href="https://github.com/sjlewis25/aws-docker-cicd" class="project-link" target="_blank">View Project ‚Üí</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Cloud Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="tag">AWS (S3, EC2, Lambda, CloudFront)</span>
+                        <span class="tag">IAM & Security</span>
+                        <span class="tag">CloudWatch</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Infrastructure as Code</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Terraform</span>
+                        <span class="tag">CloudFormation</span>
+                        <span class="tag">Git</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Bash</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Containers</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Docker</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-text">
+                Currently seeking Cloud Support Engineer and DevOps Engineer opportunities.<br>
+                Let's connect and discuss how I can contribute to your team.
+            </p>
+            <div class="contact-links">
+                <a href="https://github.com/sjlewis25" class="contact-btn" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/steven-lewis-fl" class="contact-btn" target="_blank">LinkedIn</a>
+                <a href="mailto:steven.j.lewis.2024@gmail.com" class="contact-btn">Email</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Steven Lewis. Infrastructure deployed with Terraform on AWS.</p>
+            <p class="footer-note">This site is served via CloudFront CDN from S3 with automated monitoring and validation.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
