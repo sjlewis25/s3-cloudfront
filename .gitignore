@@ -1,0 +1,19 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Test files
+test.*
+
+# OS
+.DS_Store
+Thumbs.db
