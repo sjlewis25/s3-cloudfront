@@ -2,12 +2,12 @@
 
 Production-grade static website infrastructure demonstrating AWS best practices for cloud support and operations.
 
-**Ìºê Live Demo**: https://d3n9dtkdnzyu4j.cloudfront.net  
-**Ì≥¶ GitHub**: https://github.com/sjlewis25/s3-cloudfront
+**Live Demo**: https://d3n9dtkdnzyu4j.cloudfront.net  
+**GitHub**: https://github.com/sjlewis25/s3-cloudfront
 
 ---
 
-## ÌøóÔ∏è Architecture
+## Architecture
 ```
 ‚îå‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îê
 ‚îÇ   Internet  ‚îÇ
@@ -57,7 +57,7 @@ Production-grade static website infrastructure demonstrating AWS best practices 
 
 ---
 
-## ‚ú® Key Features
+## Key Features
 
 | Feature | Implementation | Benefit |
 |---------|---------------|---------|
@@ -72,7 +72,7 @@ Production-grade static website infrastructure demonstrating AWS best practices 
 
 ---
 
-## Ìª†Ô∏è Technologies
+## Technologies
 
 - **Infrastructure**: Terraform (modular architecture)
 - **AWS Services**: S3, CloudFront, Lambda, CloudWatch, SNS, IAM
@@ -81,7 +81,7 @@ Production-grade static website infrastructure demonstrating AWS best practices 
 
 ---
 
-## Ì∫Ä Deployment
+## Deployment
 ```bash
 # Clone repository
 git clone https://github.com/sjlewis25/s3-cloudfront.git
@@ -107,7 +107,7 @@ terraform output -raw website_url
 
 ---
 
-## Ì¥ß Troubleshooting Guide
+## Troubleshooting Guide
 
 ### Common Issue #1: 403 Forbidden Error
 
@@ -208,7 +208,7 @@ aws sns list-subscriptions-by-topic --topic-arn YOUR-TOPIC-ARN
 
 ---
 
-## Ì≥ä Monitoring & Alerts
+## Monitoring & Alerts
 
 **CloudWatch Alarms**:
 - **4xx Error Rate**: Triggers when > 5% (2 consecutive periods)
@@ -234,7 +234,7 @@ aws cloudwatch list-metrics --namespace AWS/Lambda
 
 ---
 
-## Ì≤∞ Cost Analysis
+## Cost Analysis
 
 **Monthly Cost Estimate**: $1-5
 
@@ -247,32 +247,32 @@ aws cloudwatch list-metrics --namespace AWS/Lambda
 | CloudWatch | 3 alarms | Free tier |
 
 **Cost Optimization Strategies**:
-1. ‚úÖ Lifecycle policies (Glacier after 30 days) - saves 80% on old versions
-2. ‚úÖ PriceClass_100 (US, Canada, Europe only) - cheaper than global
-3. ‚úÖ Incomplete upload cleanup - prevents wasted storage
-4. ‚úÖ CloudFront compression - reduces bandwidth costs
+1. Lifecycle policies (Glacier after 30 days) - saves 80% on old versions
+2. PriceClass_100 (US, Canada, Europe only) - cheaper than global
+3. Incomplete upload cleanup - prevents wasted storage
+4. CloudFront compression - reduces bandwidth costs
 
 ---
 
-## ÌæØ Skills Demonstrated
+## Skills Demonstrated
 
 **For Cloud Support Engineer Roles**:
-- ‚úÖ S3 bucket policies and IAM troubleshooting
-- ‚úÖ CloudFront CDN configuration and caching strategies
-- ‚úÖ Lambda event-driven architecture
-- ‚úÖ CloudWatch monitoring, metrics, and alarms
-- ‚úÖ Cost optimization through lifecycle management
-- ‚úÖ Security best practices (OAI, encryption, least-privilege IAM)
+- S3 bucket policies and IAM troubleshooting
+- CloudFront CDN configuration and caching strategies
+- Lambda event-driven architecture
+- CloudWatch monitoring, metrics, and alarms
+- Cost optimization through lifecycle management
+- Security best practices (OAI, encryption, least-privilege IAM)
 
 **Infrastructure as Code**:
-- ‚úÖ Modular Terraform architecture
-- ‚úÖ Resource dependencies and outputs
-- ‚úÖ Variable management across environments
-- ‚úÖ State management
+- Modular Terraform architecture
+- Resource dependencies and outputs
+- Variable management across environments
+- State management
 
 ---
 
-## Ì¥ê Security Features
+## Security Features
 
 1. **Origin Access Identity (OAI)**: CloudFront-only access to S3
 2. **Blocked Public Access**: All four S3 public access settings enabled
@@ -283,25 +283,25 @@ aws cloudwatch list-metrics --namespace AWS/Lambda
 
 ---
 
-## Ì≥à Future Enhancements
+## Future Enhancements
 
-- [ ] Custom domain with Route 53 + ACM certificate
-- [ ] AWS WAF for additional security (SQL injection, XSS protection)
-- [ ] S3 access logging and analysis with Athena
-- [ ] Cost tracking dashboard with detailed breakdowns
-- [ ] CI/CD pipeline for automated deployments
-- [ ] Blue/green deployment strategy
-- [ ] CloudFront Functions for edge computing
+- Custom domain with Route 53 + ACM certificate
+- AWS WAF for additional security (SQL injection, XSS protection)
+- S3 access logging and analysis with Athena
+- Cost tracking dashboard with detailed breakdowns
+- CI/CD pipeline for automated deployments
+- Blue/green deployment strategy
+- CloudFront Functions for edge computing
 
 ---
 
-## Ì≥ù License
+## License
 
 MIT License - Feel free to use this as a template for your own projects
 
 ---
 
-## Ì±§ Author
+## Author
 
 **Steve Lewis**  
 Cloud Engineer | AWS Solutions Architect Associate | Marine Corps Veteran
