@@ -1,4 +1,4 @@
-# S3 Static Website with CloudFront CDN
+# S3 Static Website with CloudFront 
 
 Production-grade static website infrastructure demonstrating AWS best practices for cloud support and operations.
 
@@ -77,7 +77,7 @@ Production-grade static website infrastructure demonstrating AWS best practices 
 - **Infrastructure**: Terraform (modular architecture)
 - **AWS Services**: S3, CloudFront, Lambda, CloudWatch, SNS, IAM
 - **Languages**: Python (Lambda), HCL (Terraform)
-- **CI/CD**: Git-based workflow
+- **CI/CD**: GitHub Actions (automated deployment)
 
 ---
 
@@ -231,6 +231,30 @@ aws cloudwatch list-metrics --namespace AWS/S3
 # Lambda metrics
 aws cloudwatch list-metrics --namespace AWS/Lambda
 ```
+---
+
+##  CI/CD Pipeline
+
+Automated deployment using GitHub Actions.
+
+### How It Works
+1. **Push changes** to `main` branch (files in `website/` folder)
+2. **GitHub Actions automatically:**
+   - Syncs files to S3
+   - Invalidates CloudFront cache
+   - Deploys in ~90 seconds
+3. **New version live** at https://d3n9dtkdnzyu4j.cloudfront.net
+
+### Manual Deployment
+Trigger manually from [GitHub Actions](https://github.com/sjlewis25/s3-cloudfront/actions) → Run workflow
+
+### Deployment History
+View all deployments: [Actions History](https://github.com/sjlewis25/s3-cloudfront/actions/workflows/deploy.yml)
+
+### Configuration
+- **Workflow:** `.github/workflows/deploy.yml`
+- **Secrets:** AWS credentials, S3 bucket, CloudFront distribution ID
+- **Trigger:** Push to main with changes in `website/` folder
 
 ---
 
