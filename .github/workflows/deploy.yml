@@ -1,0 +1,47 @@
+name: Deploy to CloudFront
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'website/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      
+      - name: Sync to S3
+        run: |
+          echo "Syncing files to S3..."
+          aws s3 sync website/ s3://${{ secrets.S3_BUCKET }} \
+            --delete \
+            --cache-control "public, max-age=3600"
+          echo "✅ S3 sync complete"
+      
+      - name: Invalidate CloudFront cache
+        run: |
+          echo "Invalidating CloudFront cache..."
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} \
+            --paths "/*"
+          echo "✅ CloudFront invalidation started"
+      
+      - name: Deployment summary
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "✅ Deployment successful!"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "��� Live site: https://d3n9dtkdnzyu4j.cloudfront.net"
+          echo "⏱️  CloudFront propagation: 1-2 minutes"
